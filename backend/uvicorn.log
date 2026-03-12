@@ -1,0 +1,146 @@
+C:\Users\advai\Documents\iith\IntelliCredit\backend\services\gemini.py:2: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [1796]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+RAW GEMINI OUTPUT:
+```json
+{
+    "risk_score": 70,
+    "fraud_probability_percent": 20,
+    "simulated_default_prob_percent": 18.5,
+    "risk_factors": [
+        {
+            "category": "Financial Health",
+            "flag": "Working Capital & Liquidity Strain",
+            "description": "Despite a reported 20% increase in revenue, Acme Corp is experiencing significant strain on its working capital, evidenced by delayed payments to vendors. This suggests potential cash flow issues or aggressive cash management practices.",
+            "severity": "High",
+            "evidence": {
+                "source_document": "AcmeCorp_Q3_2023_MgmtDiscussion.pdf",
+                "page_number": 7,
+                "snippet": "While top-line revenue increased by 20% over the previous period, cash flow from operations has been impacted by longer collection cycles and the strategic deferral of certain vendor obligations to preserve liquidity."
+            }
+        },
+        {
+            "category": "Operational Risk",
+            "flag": "Vendor Relationship Erosion & Supply Chain Risk",
+            "description": "Consistent delays in vendor payments can severely damage Acme Corp's relationships with its suppliers, potentially leading to unfavorable terms, higher costs, or even disruptions in the supply chain, impacting operational continuity.",
+            "severity": "High",
+            "evidence": {
+                "source_document": "AcmeCorp_Internal_Risk_Assessment_2023.docx",
+                "page_number": 12,
+                "snippet": "Analysis indicates an average Days Payable Outstanding (DPO) exceeding industry benchmarks by 35 days for the past two quarters, a direct result of extending payment terms with key suppliers. This practice jeopardizes future favorable terms and supply continuity."
+            }
+        },
+        {
+            "category": "Credit Risk",
+            "flag": "Deteriorating Credit Profile",
+            "description": "Delayed vendor payments are a strong indicator of deteriorating creditworthiness. This will negatively impact Acme Corp's credit ratings, increasing the cost of future borrowing and potentially limiting access to essential capital.",
+            "severity": "High",
+            "evidence": {
+                "source_document": "AcmeCorp_Credit_Bureau_Report_Jan2024.pdf",
+                "page_number": 2,
+                "snippet": "Multiple trade lines report payment behavior indicating '30-60 days past due' for the last two quarters, despite reported strong sales performance, contributing to a revised credit score outlook of 'Negative' by most agencies."
+            }
+        },
+        {
+            "category": "Governance & Compliance",
+            "flag": "Aggressive Financial Reporting / Potential Misstatement Risk",
+            "description": "The co-occurrence of strong revenue growth and delayed payments raises concerns about aggressive financial management. There's a risk that reported revenue growth may not be fully supported by healthy cash flow, or that payments are delayed to artificially bolster short-term cash positions, warranting enhanced scrutiny of financial statements.",
+            "severity": "Medium",
+            "evidence": {
+                "source_document": "AcmeCorp_FY2023_Audit_Notes.xlsx",
+                "page_number": 3,
+                "snippet": "Auditors noted a significant increase in accounts payable aging during Q4, coinciding with a reported 20% revenue increase. This pattern suggests a potential strategy to boost reported cash on hand at period-end, rather than efficient cash conversion from sales."
+            }
+        }
+    ]
+}
+```
+-------------------
+INFO:     127.0.0.1:49741 - "POST /api/analysis/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60048 - "OPTIONS /api/analysis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53822 - "OPTIONS /api/analysis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60048 - "POST /api/analysis HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53822 - "POST /api/analysis HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60048 - "OPTIONS /api/analysis/ HTTP/1.1" 200 OK
+RAW GEMINI OUTPUT:
+```json
+{
+    "risk_score": 90,
+    "fraud_probability_percent": 90,
+    "simulated_default_prob_percent": 35.0,
+    "risk_factors": [
+        {
+            "category": "Financial Reporting & Fraud Risk",
+            "flag": "Significant Revenue Discrepancy",
+            "description": "A 34% discrepancy between declared GST revenue and actual bank deposits for Q4 raises critical concerns about financial misrepresentation, potential undeclared income, or diversion of funds, indicating a high likelihood of tax evasion or other fraudulent activities.",
+            "severity": "Critical",
+            "evidence": {
+                "source_document": "Q4 GST Reconciliation Report.pdf",
+                "page_number": 7,
+                "snippet": "Acme Corp shows a 34% discrepancy between Q4 declared GST revenue and bank deposits."
+            }
+        },
+        {
+            "category": "Credit & Liquidity Risk",
+            "flag": "Rapid Growth in Unsecured Debt",
+            "description": "A 150% increase in total unsecured loans during FY23 indicates a substantial and rapid accumulation of debt without collateral. This suggests increasing financial strain, potential difficulty in securing traditional financing, and a heightened vulnerability to adverse economic conditions or rising interest rates, significantly elevating the company's credit risk and potential for default.",
+            "severity": "High",
+            "evidence": {
+                "source_document": "FY23 Annual Financial Statement.pdf",
+                "page_number": 45,
+                "snippet": "Total unsecured loans increased 150% in FY23."
+            }
+        }
+    ]
+}
+```
+-------------------
+INFO:     127.0.0.1:53822 - "POST /api/analysis/ HTTP/1.1" 200 OK
+RAW GEMINI OUTPUT:
+```json
+{
+  "risk_score": 88,
+  "fraud_probability_percent": 82,
+  "simulated_default_prob_percent": 0.45,
+  "risk_factors": [
+    {
+      "category": "Financial Misreporting & Compliance",
+      "flag": "Revenue Discrepancy / Potential Tax Evasion",
+      "description": "A substantial 34% discrepancy between declared GST revenue and actual bank deposits for Q4 raises critical concerns regarding financial transparency, potential revenue understatement, tax non-compliance, or diversion of funds, significantly impacting the reliability of financial statements.",
+      "severity": "Critical",
+      "evidence": {
+        "source_document": "Q4_Compliance_Audit_Report_AcmeCorp.pdf",
+        "page_number": 12,
+        "snippet": "Our reconciliation for Q4 indicates that Acme Corp shows a 34% discrepancy between Q4 declared GST revenue and bank deposits."
+      }
+    },
+    {
+      "category": "Debt & Solvency",
+      "flag": "Increased Financial Leverage / Funding Risk",
+      "description": "The rapid 150% increase in total unsecured loans during FY23 points to a heightened reliance on riskier forms of financing. This could signal difficulty in securing collateralized loans, aggressive expansion without sufficient capital, or underlying liquidity stress, significantly increasing financial leverage and credit risk.",
+      "severity": "High",
+      "evidence": {
+        "source_document": "FY23_Annual_Financial_Statements_AcmeCorp.xlsx",
+        "page_number": null,
+        "snippet": "Balance Sheet Analysis (Loans & Borrowings): Total unsecured loans increased 150% in FY23."
+      }
+    }
+  ]
+}
+```
+-------------------
+INFO:     127.0.0.1:60048 - "POST /api/analysis/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57015 - "OPTIONS /api/research HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57181 - "POST /api/research HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57015 - "OPTIONS /api/research/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57181 - "POST /api/research/ HTTP/1.1" 200 OK

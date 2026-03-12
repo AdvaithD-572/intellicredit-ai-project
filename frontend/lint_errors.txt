@@ -1,0 +1,42 @@
+
+> frontend@0.1.0 lint
+> next lint
+
+
+./src/app/analysis/page.tsx
+5:10  Error: 'TrendingDown' is defined but never used.  @typescript-eslint/no-unused-vars
+5:54  Error: 'Percent' is defined but never used.  @typescript-eslint/no-unused-vars
+35:36  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/company/[name]/page.tsx
+34:12  Error: 'files' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+36:54  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+38:58  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+132:34  Error: 'Loader2' is not defined.  react/jsx-no-undef
+174:93  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+174:117  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+283:103  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/page.tsx
+11:3  Error: 'Briefcase' is defined but never used.  @typescript-eslint/no-unused-vars
+14:16  Error: 'Bar' is defined but never used.  @typescript-eslint/no-unused-vars
+195:63  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/research/page.tsx
+17:36  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+61:63  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+61:77  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/upload/page.tsx
+4:47  Error: 'XCircle' is defined but never used.  @typescript-eslint/no-unused-vars
+115:44  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/components/EvidenceViewer.tsx
+33:11  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+33:30  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/components/Header.tsx
+93:45  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+93:53  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules

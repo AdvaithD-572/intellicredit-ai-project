@@ -1,0 +1,1 @@
+src/app/company/[name]/page.tsx(132,34): error TS2304: Cannot find name 'Loader2'.

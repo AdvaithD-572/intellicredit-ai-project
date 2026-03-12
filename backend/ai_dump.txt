@@ -1,0 +1,66 @@
+C:\Users\advai\Documents\iith\IntelliCredit\backend\services\gemini.py:2: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+RAW GEMINI OUTPUT:
+```json
+{
+    "risk_score": 75,
+    "fraud_probability_percent": 55,
+    "simulated_default_prob_percent": 27.5,
+    "risk_factors": [
+        {
+            "category": "Liquidity & Working Capital Management",
+            "flag": "Extended Days Payable Outstanding (DPO)",
+            "description": "Acme Corp's delay in vendor payments indicates significant pressure on its short-term liquidity and cash flow. While revenue increased, the inability to meet immediate obligations suggests a potential mismatch between reported earnings and actual cash generation.",
+            "severity": "Critical",
+            "evidence": {
+                "source_document": "Accounts Payable Aging Report - Q3 2023",
+                "page_number": 3,
+                "snippet": "Analysis of the ledger indicates that **vendor payments have been significantly delayed**, with a substantial portion of invoices now 60+ days past due, leading to an unfavorable extension of our Days Payable Outstanding."
+            }
+        },
+        {
+            "category": "Operational & Supply Chain Risk",
+            "flag": "Deteriorating Vendor Relationships",
+            "description": "Consistent delays in payments can severely damage relationships with critical suppliers, potentially leading to stricter credit terms, increased costs for supplies, or even disruptions in the supply chain, impacting production and sales.",
+            "severity": "High",
+            "evidence": {
+                "source_document": "Internal Memo - Supplier Relations Review",
+                "page_number": 1,
+                "snippet": "Feedback from procurement highlights increasing frustration among key suppliers due to persistent **delayed vendor payments**, with several threatening to demand upfront payments or terminate existing contracts."
+            }
+        },
+        {
+            "category": "Accounting Practices & Financial Transparency",
+            "flag": "Discrepancy: Revenue Growth vs. Cash Conversion",
+            "description": "The paradox of robust 20% revenue growth alongside delayed vendor payments raises concerns about the quality of revenue, aggressive revenue recognition policies, or significant issues in converting sales into cash. This discrepancy is a red flag for potential financial misrepresentation or future write-downs.",
+            "severity": "Critical",
+            "evidence": {
+                "source_document": "Auditor's Management Letter - FY2023 Interim Review",
+                "page_number": 5,
+                "snippet": "Despite a reported **20% increase in revenue**, the company's persistent challenges with **delayed vendor payments** suggest a potential disconnect between accrual-based revenue recognition and actual cash generation, warranting a deeper investigation into cash flow cycles and revenue quality."
+            }
+        },
+        {
+            "category": "Solvency & Credit Risk",
+            "flag": "Elevated Default Probability",
+            "description": "The inability to make timely vendor payments, despite revenue growth, signals underlying financial stress that increases the probability of default on other obligations, including loans and credit facilities, if liquidity issues persist.",
+            "severity": "High",
+            "evidence": {
+                "source_document": "Credit Risk Assessment Report - Q4 2023",
+                "page_number": 2,
+                "snippet": "The current pattern of **delayed vendor payments**, even in a period of reported growth, indicates an elevated short-term default risk due to apparent severe working capital shortages or cash mismanagement, impacting overall creditworthiness."
+            }
+        }
+    ]
+}
+```
+-------------------
+Success!
+{'status': 'success', 'risk_analysis': {'risk_score': 75, 'fraud_probability_percent': 55, 'simulated_default_prob_percent': 27.5, 'risk_factors': [{'category': 'Liquidity & Working Capital Management', 'flag': 'Extended Days Payable Outstanding (DPO)', 'description': "Acme Corp's delay in vendor payments indicates significant pressure on its short-term liquidity and cash flow. While revenue increased, the inability to meet immediate obligations suggests a potential mismatch between reported earnings and actual cash generation.", 'severity': 'Critical', 'evidence': {'source_document': 'Accounts Payable Aging Report - Q3 2023', 'page_number': 3, 'snippet': 'Analysis of the ledger indicates that **vendor payments have been significantly delayed**, with a substantial portion of invoices now 60+ days past due, leading to an unfavorable extension of our Days Payable Outstanding.'}}, {'category': 'Operational & Supply Chain Risk', 'flag': 'Deteriorating Vendor Relationships', 'description': 'Consistent delays in payments can severely damage relationships with critical suppliers, potentially leading to stricter credit terms, increased costs for supplies, or even disruptions in the supply chain, impacting production and sales.', 'severity': 'High', 'evidence': {'source_document': 'Internal Memo - Supplier Relations Review', 'page_number': 1, 'snippet': 'Feedback from procurement highlights increasing frustration among key suppliers due to persistent **delayed vendor payments**, with several threatening to demand upfront payments or terminate existing contracts.'}}, {'category': 'Accounting Practices & Financial Transparency', 'flag': 'Discrepancy: Revenue Growth vs. Cash Conversion', 'description': 'The paradox of robust 20% revenue growth alongside delayed vendor payments raises concerns about the quality of revenue, aggressive revenue recognition policies, or significant issues in converting sales into cash. This discrepancy is a red flag for potential financial misrepresentation or future write-downs.', 'severity': 'Critical', 'evidence': {'source_document': "Auditor's Management Letter - FY2023 Interim Review", 'page_number': 5, 'snippet': "Despite a reported **20% increase in revenue**, the company's persistent challenges with **delayed vendor payments** suggest a potential disconnect between accrual-based revenue recognition and actual cash generation, warranting a deeper investigation into cash flow cycles and revenue quality."}}, {'category': 'Solvency & Credit Risk', 'flag': 'Elevated Default Probability', 'description': 'The inability to make timely vendor payments, despite revenue growth, signals underlying financial stress that increases the probability of default on other obligations, including loans and credit facilities, if liquidity issues persist.', 'severity': 'High', 'evidence': {'source_document': 'Credit Risk Assessment Report - Q4 2023', 'page_number': 2, 'snippet': 'The current pattern of **delayed vendor payments**, even in a period of reported growth, indicates an elevated short-term default risk due to apparent severe working capital shortages or cash mismanagement, impacting overall creditworthiness.'}}]}}
