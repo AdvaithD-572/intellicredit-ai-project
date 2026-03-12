@@ -2,6 +2,9 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+import streamlit as st
+
+GEMINI_API_KEY = st.secrets["API_KEY"]
 
 load_dotenv()
 
