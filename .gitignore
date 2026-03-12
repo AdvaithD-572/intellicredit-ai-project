@@ -1,13 +1,8 @@
 # environment variables
-.env
+backend/.env
 
 # python
 __pycache__/
 *.pyc
 venv/
 
-# node
-node_modules/
-
-# system
-.DS_Store
